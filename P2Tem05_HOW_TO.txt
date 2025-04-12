@@ -1,0 +1,60 @@
+Projekt: Wydatkometr 2.0 - Aplikacja do analizy wydatków z użyciem wykresów boxplot
+
+Członkowie zespołu:
+- Kamil Celadyn — implementacja graficznego interfejsu użytkownika (GUI) z użyciem tkinter:
+  * zaprojektowanie układu aplikacji,
+  * obsługa formularzy i przycisków,
+  * integracja interfejsu z logiką programu,
+  * wyświetlanie danych i wykresów w oknie aplikacji.
+		-dokumentacja
+
+- Mykhailo Bondar — implementacja logiki i algorytmów przetwarzania danych:
+  * wczytywanie i zapisywanie danych z/do plików CSV (z użyciem pandas),
+  * walidacja i dodawanie danych,
+  * filtrowanie danych według kategorii,
+  * generowanie wykresów typu boxplot (z użyciem matplotlib),
+  * analiza danych pod kątem rozrzutu wartości w kategoriach.
+
+Opis działania programu:
+-------------------------
+
+Program jest graficzną aplikacją desktopową (GUI) służącą do:
+- wczytywania danych o wydatkach z pliku CSV
+- dodawania nowych wpisów ręcznie
+- zapisywania danych do CSV
+- generowania wykresów typu boxplot dla wybranych kategorii wydatków
+
+Jak uruchomić:
+--------------
+1. Upewnij się, że masz zainstalowanego Pythona 3.13
+2. Zainstaluj wymagane biblioteki komendą:
+   pip install -r requirements.txt
+3. Uruchom program:
+   python main.py
+
+Wymagana struktura danych wejściowych (plik CSV):
+--------------------------------------------------
+Plik wejściowy powinien zawierać dane w formacie:
+Data,Kategoria,Kwota
+
+Przykład:
+2024-03-01,Jedzenie,45.00  
+2024-03-02,Transport,20.00
+
+Opis działania aplikacji:
+--------------------------
+1. Po uruchomieniu programu pojawi się okno GUI.
+2. Użytkownik może:
+   - wczytać plik CSV z danymi o wydatkach („📂 Wczytaj CSV”)
+   - dodać nowy wydatek ręcznie (formularz poniżej tabeli)
+   - zapisać dane do pliku („💾 Zapisz CSV”)
+   - wygenerować wykres boxplot dla wybranej kategorii („📊 Generuj Boxplot”)
+3. Wykres boxplot przedstawia rozrzut wydatków w danej kategorii (m.in. medianę, kwartyle, wartości odstające).
+
+Moduły zewnętrzne:
+------------------
+Program korzysta z bibliotek:
+- pandas
+- matplotlib
+- tkinter (wbudowany w standardową bibliotekę Pythona)
+
